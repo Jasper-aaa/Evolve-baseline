@@ -11,5 +11,6 @@ do
         training.use_tqdm=true \
         seed=0 \
 
+done
 # Note1: this will automatically load the latest checkpoint as per your exp_name, variant_name, algo, and stage.
 #        Else you can specify the checkpoint_path to load a specific checkpoint.
