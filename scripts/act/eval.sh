@@ -1,7 +1,14 @@
 task="$1"
+
 # This script is used to finetune ACT on downstream tasks
 for shot in 1 2 4 8
-do
+do  
+    TASK_UPPER=${task^^}
+    if [ "$task" == "long" ]; then
+        TASK_UPPER="10"
+    fi
+    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${task}/act/act-libero-${task}-${shot}-shot/block_16/0/run_000/multitask_model.pth
+"
     python evaluate.py \
         task=libero_${task}_fewshot \
         algo=act \
