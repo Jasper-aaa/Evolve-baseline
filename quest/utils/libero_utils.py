@@ -22,7 +22,7 @@ from libero.libero.benchmark import get_benchmark
 from transformers import AutoModel, AutoTokenizer, logging
 from hydra.utils import to_absolute_path
 import time
-from libero.libero import get_libero_path
+from libero.libero import get_libero_path,set_libero_default_path
 from libero.libero.envs import OffScreenRenderEnv, SubprocVectorEnv, DummyVectorEnv
 from libero.libero.utils.time_utils import Timer
 import multiprocessing
@@ -33,7 +33,7 @@ import h5py
 from gymnasium.vector.utils import batch_space
 from tqdm import trange
 np.set_printoptions(suppress=True)
-
+set_libero_default_path("/home/yeyifan/workplace/embodied/Evolve-baseline/LIBERO")
 
 class LiberoVectorWrapper(gymnasium.Env):
     def __init__(self,
