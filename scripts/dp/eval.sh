@@ -7,14 +7,13 @@ do
     if [ "$task" == "long" ]; then
         TASK_UPPER="10"
     fi
-    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${TASK_UPPER}/quest/quest-libero-${task}-${shot}-shot/block_32_ds_4/0/stage_2/multitask_model.pth"
+    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${TASK_UPPER}/dp/dp-libero-${task}-${shot}-shot/block_32/0/run_000/multitask_model.pth"
     python evaluate.py \
         task=libero_${task}_fewshot \
-        algo=quest \
-        exp_name=quest-libero-${task}-${shot}-shot \
-        variant_name=block_32_ds_4 \
+        algo=diffusion_policy \
+        exp_name=dp-libero-${task}-${shot}-shot \
+        variant_name=block_32 \
         algo.skill_block_size=32 \
-        algo.downsample_factor=4 \
         training.use_tqdm=true \
         seed=0 \
         checkpoint_path=$ckpt_path \
