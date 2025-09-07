@@ -7,7 +7,7 @@ do
     if [ "$task" == "long" ]; then
         TASK_UPPER="10"
     fi
-    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${TASK_UPPER}/dp/dp-libero-${task}-${shot}-shot/block_32/0/run_000/multitask_model.pth"
+    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${TASK_UPPER}/diffusion_policy/dp-libero-${task}-${shot}-shot/block_32/0/run_000/multitask_model.pth"
     python evaluate.py \
         task=libero_${task}_fewshot \
         algo=diffusion_policy \
