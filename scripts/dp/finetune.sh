@@ -9,7 +9,7 @@ do
         task=libero_${task}_fewshot \
         task.demos_per_env=${shot} \
         algo=diffusion_policy \
-        exp_name=dp-libero-long-${shot}-shot \
+        exp_name=dp-libero-${task}-${shot}-shot \
         variant_name=block_32 \
         training.use_tqdm=false \
         training.save_all_checkpoints=false \
