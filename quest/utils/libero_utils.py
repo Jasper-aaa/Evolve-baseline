@@ -33,7 +33,7 @@ import h5py
 from gymnasium.vector.utils import batch_space
 from tqdm import trange
 np.set_printoptions(suppress=True)
-set_libero_default_path("/home/yeyifan/workplace/embodied/Evolve-baseline/LIBERO")
+set_libero_default_path("")
 
 class LiberoVectorWrapper(gymnasium.Env):
     def __init__(self,
