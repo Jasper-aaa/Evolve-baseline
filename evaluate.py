@@ -10,8 +10,8 @@ import torch
 import torch.nn as nn
 import quest.utils.utils as utils
 from pyinstrument import Profiler
-from moviepy import ImageSequenceClip
-# from moviepy.editor import ImageSequenceClip # fixed problem
+# from moviepy import ImageSequenceClip
+from moviepy.editor import ImageSequenceClip # fixed problem
 import json
 
 OmegaConf.register_new_resolver("eval", eval, replace=True)
