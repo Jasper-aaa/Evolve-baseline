@@ -73,6 +73,7 @@ def main(cfg):
     else:
         print('starting from scratch')
 
+    # cfg.task.dataset["n_demos"] = train_cfg.num_shot
     dataset = instantiate(cfg.task.dataset)
     model.preprocess_dataset(dataset, use_tqdm=train_cfg.use_tqdm)
     train_dataloader = instantiate(
