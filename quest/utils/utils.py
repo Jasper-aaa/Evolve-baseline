@@ -34,7 +34,7 @@ def get_experiment_dir(cfg, evaluate=False, allow_overlap=False):
 
     if cfg.make_unique_experiment_dir:
         # look for the most recent run
-        experiment_id = 0
+        experiment_id = -1
         if os.path.exists(experiment_dir):
             for path in Path(experiment_dir).glob("run_*"):
                 if not path.is_dir():
