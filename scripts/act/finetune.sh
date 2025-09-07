@@ -1,4 +1,4 @@
-task="1"
+task="$1"
 # This script is used to finetune ACT on downstream tasks
 for shot in 1 2 4 8
 do
