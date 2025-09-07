@@ -7,7 +7,7 @@ do
     if [ "$task" == "long" ]; then
         TASK_UPPER="10"
     fi
-    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${task}/act/act-libero-${task}-${shot}-shot/block_16/0/run_000/multitask_model.pth"
+    ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${TASK_UPPER}/act/act-libero-${task}-${shot}-shot/block_16/0/run_000/multitask_model.pth"
     python evaluate.py \
         task=libero_${task}_fewshot \
         algo=act \
@@ -16,6 +16,7 @@ do
         algo.skill_block_size=16 \
         training.use_tqdm=true \
         seed=0 \
+        checkpoint_path=$ckpt_path \
 
 done
 # Note1: this will automatically load the latest checkpoint as per your exp_name, variant_name, algo, and stage.
