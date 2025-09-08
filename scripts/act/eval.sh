@@ -1,7 +1,7 @@
 task="$1"
 
 # This script is used to finetune ACT on downstream tasks
-for shot in 1 2 4 8
+for shot in 2 8
 do  
     TASK_UPPER=${task^^}
     if [ "$task" == "long" ]; then
