@@ -1,6 +1,5 @@
 task="$1"
 
-# This script is used to finetune ACT on downstream tasks
 for shot in 1 2 4 8
 do  
     TASK_UPPER=${task^^}
@@ -10,11 +9,9 @@ do
     ckpt_path="/home/yeyifan/workplace/embodied/experiments/libero/LIBERO_${TASK_UPPER}/bc_transformer_policy/bctrans-libero-${task}-${shot}-shot/block_10/0/run_000/multitask_model.pth"
     python evaluate.py \
         task=libero_${task}_fewshot \
-        algo=act \
-        exp_name=act-libero-${task}-${shot}-shot \
-        variant_name=block_16 \
-        algo.skill_block_size=16 \
-        training.use_tqdm=true \
+        algo=bc_transformer \
+        exp_name=bctrans-libero-${task}-${shot}-shot \
+        variant_name=block_10 \
         seed=0 \
         checkpoint_path=$ckpt_path \
 
