@@ -16,7 +16,7 @@ rollout:
   interval: 25
   rollouts_per_env: 50
   max_episode_length: ${task.horizon}
-  num_parallel_envs: 1
+  num_parallel_envs: 12
   n_video: 0
 
 exp_name: pretrain_ # 
